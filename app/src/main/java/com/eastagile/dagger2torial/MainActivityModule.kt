@@ -9,9 +9,9 @@ const val INFO2 = "Info2"
 
 @Module
 class MainActivityModule {
-    @Provides
+    @Provides @Named(INFO1)
     fun providesInfo(): Info = Info("Dagger using Module")
 
-//    @Provides @Named(INFO2)
-//    fun providesInfo2(): Info = Info("New annotation @NAMED")
+    @Provides @Named(INFO2)
+    fun providesInfo2(): Info = Info("New annotation @NAMED")
 }

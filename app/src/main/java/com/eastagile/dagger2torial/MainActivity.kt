@@ -8,19 +8,19 @@ import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
-//    @Inject
-//    @field:Named(INFO1)
-//    lateinit var info1: Info
+    @Inject
+    @field:Named(INFO1)
+    lateinit var info1: Info
 
     @Inject
-//    @field:Named(INFO2)
-    lateinit var info: Info
+    @field:Named(INFO2)
+    lateinit var info2: Info
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         DaggerInfoComponent.create().inject(this)
 
-        hello_text.text = info.text
+        hello_text.text = String.format(getString(R.string.hello),info1.text, info2.text)
     }
 }
